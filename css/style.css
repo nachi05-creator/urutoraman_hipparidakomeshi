@@ -1,0 +1,149 @@
+/* 基本設定：スクロールの長さを確保 */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    
+}
+html {
+    scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+    display: none;
+}
+/* ヘッダー：最前面に固定 */
+.header {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 60px;
+    z-index: 10000 !important;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.nav-buttons {
+
+display: flex;
+gap: 15px;
+white-space: nowrap;
+
+}
+
+
+
+.nav-button {
+font-family: "Zen Maru Gothic", sans-serif;
+padding: 6px 28px;
+color: #555555;
+border: 1.5px solid #999999;
+border-radius: 50px;
+background-color: transparent;
+cursor: pointer;
+transition: 0.3s;
+font-size: 16px;
+}
+
+.nav-button:hover {
+background-color: #f0f0f0;
+
+}
+
+/* 全レイヤー共通：画面いっぱい */
+.layer {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+}
+
+/* 1. ローディング：一番上（ヘッダーの下） */
+/* ローディング画像の表示設定 */
+/* ローディングコンテナを画面全体に */
+/* ローディング画面全体を固定 */
+#loading-screen {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: #fff; /* 背景色を指定 */
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#loading-container {
+    position: relative;
+    width: 600px; 
+    height: 400px;
+}
+
+.loading-img {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%); /* 画面のど真ん中に固定 */
+    max-width: 150%;                  /* 幅を画面内に収める */
+    max-height: 150%;                 /* 高さを画面内に収める */
+    width: auto;                      /* 比率を維持 */
+    height: auto;                     /* 比率を維持 */
+    opacity: 0;
+    transition: none;
+}
+
+/* activeクラスがついたものだけを表示 */
+.loading-img.active {
+    opacity: 1;
+}
+
+#animation-layer {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: 5000;
+    background: #fff;
+    pointer-events: none; 
+}
+/* 2. アニメーション：その下 */
+#hero-animation-container {
+    position: fixed;
+    top: 60px;             
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 60px);  
+    z-index: 2000;
+}
+
+.hero-img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100%;         
+    object-fit: cover;
+    display: none;
+}
+
+
+.hero-img.active {
+    display: block !important;
+}
+/* 3. ゲーム：一番下 */
+#game-layer {
+    position: fixed;
+    top: 60px;                   
+    left: 0;
+    z-index: 1000;
+    width: 100vw;
+    height: calc(100vh - 60px);   
+    background-color: #000;
+    pointer-events: none;
+}
+
+#game-frame {
+    width: 100%;    
+    height: 100%;   
+    border: none;
+}
