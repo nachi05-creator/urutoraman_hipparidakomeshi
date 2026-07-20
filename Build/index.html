@@ -51,13 +51,13 @@
         updateBannerVisibility();
       }
 
-      var buildUrl = ".";
-      var loaderUrl = buildUrl + "/hipparidako_game_0720.loader.js";
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/hipparidako0720.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/hipparidako_game_0720.data",
-        frameworkUrl: buildUrl + "/hipparidako_game_0720.framework.js",
-        codeUrl: buildUrl + "/hipparidako_game_0720.wasm",
+        dataUrl: buildUrl + "/hipparidako0720.data",
+        frameworkUrl: buildUrl + "/hipparidako0720.framework.js",
+        codeUrl: buildUrl + "/hipparidako0720.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "My project",
@@ -104,8 +104,8 @@
 
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-        canvas.style.width = "100%";
-        canvas.style.height = "100%";
+        canvas.style.width = "960px";
+        canvas.style.height = "600px";
       }
 
       document.querySelector("#unity-loading-bar").style.display = "block";
